@@ -19,7 +19,7 @@ function applyLanguage(l){
  document.querySelectorAll('[data-es-html][data-en-html]').forEach(el=>{
    el.innerHTML=el.dataset[l+'Html'];
  });
- document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el=>el.placeholder=el.dataset['placeholder-'+l]);
+ document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el=>el.placeholder=el.getAttribute('data-placeholder-'+l) || '');
  document.querySelectorAll('[data-aria-es][data-aria-en]').forEach(el=>el.setAttribute('aria-label',el.dataset['aria-'+l]));
  document.querySelectorAll('[data-title-es][data-title-en]').forEach(el=>el.title=el.dataset['title-'+l]);
  const b=document.querySelector('.lang-switch'); if(b)b.textContent=ui[l].lang;
@@ -53,7 +53,29 @@ function setupTimer(){document.querySelectorAll('[data-timer]').forEach(box=>{
  box.querySelector('[data-reset]').addEventListener('click',()=>{clearInterval(timer);remaining=total;paint()});paint();
 })}
 function setupChecklist(){document.querySelectorAll('[data-checklist]').forEach(box=>{const out=box.querySelector('[data-check-count]');const update=()=>{const n=box.querySelectorAll('input:checked').length;out.textContent=lang()==='en'?`${n} items checked`:`${n} elementos marcados`};box.querySelectorAll('input').forEach(i=>i.addEventListener('change',update));document.addEventListener('languagechange',update);update()})}
-function setupContract(){document.querySelectorAll('[data-contract]').forEach(box=>box.querySelector('[data-save]').addEventListener('click',()=>alert(ui[lang()].saved)))}
+function setupContract(){
+ document.querySelectorAll('[data-contract]').forEach(box=>{
+  const btn=box.querySelector('#downloadContract');
+  if(!btn)return;
+  const get=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
+  const feedback=box.querySelector('#contractFeedback');
+  btn.addEventListener('click',()=>{
+   const current=lang(), limit=get('contractLimit'), cue=get('contractCue'), focus=get('contractFocus');
+   if(!limit||!cue||!focus){
+    if(feedback)feedback.textContent=current==='en'?'⚠️ Please complete the three parts before downloading your contract.':'⚠️ Completa las tres partes antes de descargar tu contrato.';
+    return;
+   }
+   const date=new Date().toLocaleDateString(current==='en'?'en-US':'es-CO');
+   const content=current==='en'
+    ? `DIGITAL CONTRACT\n\nDate: ${date}\n\nMy digital limit:\n${limit}\n\nMy closing cue:\n${cue}\n\nMy priority:\n${focus}\n\nCommitment:\nI will test these decisions during the next week and reflect on what works for me.\n\n🧭 Digital Compass`
+    : `CONTRATO DIGITAL\n\nFecha: ${date}\n\nMi límite digital:\n${limit}\n\nMi señal de cierre:\n${cue}\n\nMi prioridad:\n${focus}\n\nCompromiso:\nProbaré estas decisiones durante la próxima semana y reflexionaré sobre lo que funciona para mí.\n\n🧭 Brújula Digital`;
+   const blob=new Blob([content],{type:'text/plain;charset=utf-8'}), url=URL.createObjectURL(blob), a=document.createElement('a');
+   a.href=url;a.download=current==='en'?'digital-contract.txt':'contrato-digital.txt';document.body.appendChild(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(url),1000);
+   if(feedback)feedback.textContent=current==='en'?'✓ Your contract has been downloaded.':'✓ Tu contrato se ha descargado.';
+  });
+ });
+}
 function setupNav(){
  const current=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.main-nav a').forEach(a=>{const href=a.getAttribute('href');if(href===current || (current==='index.html'&&href==='#inicio'))a.classList.add('active')});
  document.querySelectorAll('[data-nav-next]').forEach(a=>{a.textContent=ui[lang()].next});document.querySelectorAll('[data-nav-prev]').forEach(a=>{a.textContent=ui[lang()].prev});document.addEventListener('languagechange',()=>{document.querySelectorAll('[data-nav-next]').forEach(a=>a.textContent=ui[lang()].next);document.querySelectorAll('[data-nav-prev]').forEach(a=>a.textContent=ui[lang()].prev)})
