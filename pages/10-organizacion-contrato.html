@@ -2,99 +2,100 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tu contrato digital · Brújula Digital</title>
-  <link rel="stylesheet" href="../assets/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tu contrato digital · Brújula Digital</title>
+    <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner"><a class="brand" href="../index.html"><span class="brand-mark">🧭</span><span>BRÚJULA
-          DIGITAL</span></a>
-      <nav class="main-nav"><a href="../index.html">Inicio</a><a href="01-atencion-foco.html">🎯 Atención</a><a
-          href="03-sueno-pantalla.html">🌙 Sueño</a><a href="05-movimiento-pantalla.html">🚶 Movimiento</a><a
-          href="07-redes-conexion.html">💬 Redes</a><a href="09-organizacion-tiempo.html">🗓️ Tiempo</a><a
-          href="../creditos.html">📚 Créditos</a></nav><button class="lang-switch" type="button"
-        aria-label="Cambiar idioma">EN</button>
-    </div>
-  </header>
-  <main>
-    <div class="screen">
-      <section class="screen-left">
-        <div>
-          <div class="tag">MODULE 05 · 10</div>
-          <h1><span data-es="🧭 Gestión del tiempo" data-en="🧭 Time management">🧭 Gestión del tiempo</span></h1><img
-            src="../assets/contract.svg" alt="🧭 Gestión del tiempo">
+    <header class="site-header">
+        <div class="header-inner"><a class="brand" href="../index.html"><span class="brand-mark">🧭</span><span>BRÚJULA
+                    DIGITAL</span></a>
+            <nav class="main-nav"><a href="../index.html">Inicio</a><a href="01-atencion-foco.html">🎯 Atención</a><a
+                    href="03-sueno-pantalla.html">🌙 Sueño</a><a href="05-movimiento-pantalla.html">🚶 Movimiento</a><a
+                    href="07-redes-conexion.html">💬 Redes</a><a href="09-organizacion-tiempo.html">🗓️ Tiempo</a><a
+                    href="../creditos.html">📚 Créditos</a></nav><button class="lang-switch" type="button"
+                aria-label="Cambiar idioma">EN</button>
         </div>
-        <div>
-          <p class="footer-copy" data-es="Bienestar digital · una práctica, no una perfección."
-            data-en="Digital wellbeing · a practice, not perfection.">Bienestar digital · una práctica, no una
-            perfección.</p>
+    </header>
+    <main>
+        <div class="screen">
+            <section class="screen-left">
+                <div>
+                    <div class="tag">MODULE 05 · 10</div>
+                    <h1><span data-es="🧭 Gestión del tiempo" data-en="🧭 Time management">🧭 Gestión del tiempo</span>
+                    </h1><img src="../assets/contract.svg" alt="🧭 Gestión del tiempo">
+                </div>
+                <div>
+                    <p class="footer-copy" data-es="Bienestar digital · una práctica, no una perfección."
+                        data-en="Digital wellbeing · a practice, not perfection.">Bienestar digital · una práctica, no
+                        una perfección.</p>
+                </div>
+            </section>
+            <section class="screen-right">
+                <div class="tag" data-es="SUBSECCIÓN" data-en="SUBSECTION">SUBSECCIÓN</div>
+                <h2><span data-es="Tu contrato digital" data-en="Your digital contract">Tu contrato digital</span></h2>
+                <p class="lead-copy"
+                    data-es="Un contrato personal convierte una intención en una regla concreta: cuándo estudias, cuándo revisas mensajes y qué haces cuando una distracción aparece."
+                    data-en="A personal contract turns an intention into a concrete rule: when you study, when you check messages, and what you do when a distraction appears.">
+                    Un contrato personal convierte una intención en una regla concreta: cuándo estudias, cuándo revisas
+                    mensajes y qué haces cuando una distracción aparece.</p>
+                <div class="source"><strong data-es="Fuente / respaldo" data-en="Source / evidence">Fuente /
+                        respaldo</strong><br>UNESCO (2023), Technology in education: appropriate and intentional use.
+                </div>
+                <div class="interaction" id="digitalContract" data-contract>
+                    <h3 data-es="🧭 Tu contrato digital" data-en="🧭 Your digital contract">🧭 Tu contrato digital</h3>
+                    <p class="muted" data-es="Escribe tres decisiones concretas que quieras probar esta semana."
+                        data-en="Write three concrete decisions you want to try this week.">Escribe tres decisiones
+                        concretas que quieras probar esta semana.</p>
+                    <label class="contract-field"><span data-es="📱 Mi límite digital" data-en="📱 My digital limit">📱
+                            Mi límite digital</span><input id="contractLimit" type="text"
+                            data-placeholder-es="Ej. No usar el celular después de las 22:00"
+                            data-placeholder-en="e.g. No phone after 10:00 PM"
+                            placeholder="Ej. No usar el celular después de las 22:00"></label>
+                    <label class="contract-field"><span data-es="🌙 Mi señal de cierre" data-en="🌙 My closing cue">🌙
+                            Mi señal de cierre</span><input id="contractCue" type="text"
+                            data-placeholder-es="Ej. Cargar el teléfono fuera del dormitorio"
+                            data-placeholder-en="e.g. Charge the phone outside the bedroom"
+                            placeholder="Ej. Cargar el teléfono fuera del dormitorio"></label>
+                    <label class="contract-field"><span data-es="🎯 Mi prioridad" data-en="🎯 My priority">🎯 Mi
+                            prioridad</span><input id="contractFocus" type="text"
+                            data-placeholder-es="Ej. Estudiar 30 minutos sin notificaciones"
+                            data-placeholder-en="e.g. Study for 30 minutes without notifications"
+                            placeholder="Ej. Estudiar 30 minutos sin notificaciones"></label>
+                    <button class="btn coral" id="downloadContract" type="button"
+                        data-es="⬇️ Guardar y descargar contrato" data-en="⬇️ Save and download contract">⬇️ Guardar y
+                        descargar contrato</button>
+                    <p id="contractFeedback" class="muted"></p>
+                </div>
+                <div class="navrow"><a class="btn ghost" data-nav-prev href="09-organizacion-tiempo.html">←
+                        Anterior</a><a class="btn dark" data-nav-next href="../creditos.html">Siguiente →</a></div>
+            </section>
         </div>
-      </section>
-      <section class="screen-right">
-        <div class="tag" data-es="SUBSECCIÓN" data-en="SUBSECTION">SUBSECCIÓN</div>
-        <h2><span data-es="Tu contrato digital" data-en="Your digital contract">Tu contrato digital</span></h2>
-        <p class="lead-copy"
-          data-es="Un contrato personal convierte una intención en una regla concreta: cuándo estudias, cuándo revisas mensajes y qué haces cuando una distracción aparece."
-          data-en="A personal contract turns an intention into a concrete rule: when you study, when you check messages, and what you do when a distraction appears.">
-          Un contrato personal convierte una intención en una regla concreta: cuándo estudias, cuándo revisas mensajes y
-          qué haces cuando una distracción aparece.</p>
-        <div class="source"><strong data-es="Fuente / respaldo" data-en="Source / evidence">Fuente /
-            respaldo</strong><br>UNESCO (2023), Technology in education: appropriate and intentional use.</div>
-        <div class="navrow"><a class="btn ghost" data-nav-prev href="09-organizacion-tiempo.html">← Anterior</a><a
-            class="btn dark" data-nav-next href="../creditos.html">Siguiente →</a></div>
-      </section>
-    </div>
-    <div class="interaction" id="digitalContract" data-contract>
-      <h3 data-es="🧭 Tu contrato digital" data-en="🧭 Your digital contract">🧭 Tu contrato digital</h3>
-      <p class="muted" data-es="Escribe tres decisiones concretas que quieras probar esta semana."
-        data-en="Write three concrete decisions you want to try this week.">Escribe tres decisiones concretas que
-        quieras probar esta semana.</p>
-      <label class="check"><span data-es="📱 Mi límite digital" data-en="📱 My digital limit">📱 Mi límite
-          digital</span></label>
-      <input id="contractLimit" type="text" data-placeholder-es="Ej. No usar el celular después de las 22:00"
-        data-placeholder-en="e.g. No phone after 10:00 PM" placeholder="Ej. No usar el celular después de las 22:00">
-      <label class="check"><span data-es="🌙 Mi señal de cierre" data-en="🌙 My closing cue">🌙 Mi señal de
-          cierre</span></label>
-      <input id="contractCue" type="text" data-placeholder-es="Ej. Cargar el teléfono fuera del dormitorio"
-        data-placeholder-en="e.g. Charge the phone outside the bedroom"
-        placeholder="Ej. Cargar el teléfono fuera del dormitorio">
-      <label class="check"><span data-es="🎯 Mi prioridad" data-en="🎯 My priority">🎯 Mi prioridad</span></label>
-      <input id="contractFocus" type="text" data-placeholder-es="Ej. Estudiar 30 minutos sin notificaciones"
-        data-placeholder-en="e.g. Study for 30 minutes without notifications"
-        placeholder="Ej. Estudiar 30 minutos sin notificaciones">
-      <button class="btn coral" id="downloadContract" type="button" data-es="⬇️ Guardar y descargar contrato"
-        data-en="⬇️ Save and download contract">⬇️ Guardar y descargar contrato</button>
-      <p id="contractFeedback" class="muted"></p>
-    </div>
-    <div class="navrow">
-      <a class="btn ghost" data-nav-prev href="09-organizacion-tiempo.html">← Anterior</a>
-      <a class="btn dark" data-nav-next href="../creditos.html">Siguiente →</a>
-    </div>
-  </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">🧭 BRÚJULA DIGITAL</div>
-        <p class="footer-copy" data-es="Bienestar digital para estudiantes universitarios."
-          data-en="Digital wellbeing for university students.">Bienestar digital para estudiantes universitarios.</p>
-      </div>
-      <div>
-        <p class="footer-copy" data-es="Recurso educativo multimedia · Opción 2"
-          data-en="Multimedia educational resource · Option 2">Recurso educativo multimedia · Opción 2</p>
-        <p class="footer-copy" data-es="HTML · CSS · JavaScript · Sin registro"
-          data-en="HTML · CSS · JavaScript · No registration">HTML · CSS · JavaScript · Sin registro</p>
-      </div>
-      <div class="footer-mark">🧭</div>
-    </div>
-    <div class="footer-bottom"><span data-es="Proyecto académico · 2026" data-en="Academic project · 2026">Proyecto
-        académico · 2026</span><span data-es="Fuentes y créditos disponibles en esta aplicación"
-        data-en="Sources and credits available in this application">Fuentes y créditos disponibles en esta
-        aplicación</span></div>
-  </footer>
-  <script src="../assets/app.js"></script>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">🧭 BRÚJULA DIGITAL</div>
+                <p class="footer-copy" data-es="Bienestar digital para estudiantes universitarios."
+                    data-en="Digital wellbeing for university students.">Bienestar digital para estudiantes
+                    universitarios.</p>
+            </div>
+            <div>
+                <p class="footer-copy" data-es="Recurso educativo multimedia · Opción 2"
+                    data-en="Multimedia educational resource · Option 2">Recurso educativo multimedia · Opción 2</p>
+                <p class="footer-copy" data-es="HTML · CSS · JavaScript · Sin registro"
+                    data-en="HTML · CSS · JavaScript · No registration">HTML · CSS · JavaScript · Sin registro</p>
+            </div>
+            <div class="footer-mark">🧭</div>
+        </div>
+        <div class="footer-bottom"><span data-es="Proyecto académico · 2026" data-en="Academic project · 2026">Proyecto
+                académico · 2026</span><span data-es="Fuentes y créditos disponibles en esta aplicación"
+                data-en="Sources and credits available in this application">Fuentes y créditos disponibles en esta
+                aplicación</span></div>
+    </footer>
+    <script src="../assets/app.js"></script>
 </body>
 
 </html>
