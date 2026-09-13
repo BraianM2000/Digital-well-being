@@ -15,5 +15,3 @@ Structure:
 - interactive quiz on every subsection
 - progress indicator
 - previous/next navigation
-
-The course brief requires at least 5 thematic modules with 2 subsections each, bilingual content, information backed by academic/institutional sources, visual elements, and at least one interactive element on each page. This package implements that structure. The final academic wording and bibliography should still be checked against the exact sources your instructor requires.
